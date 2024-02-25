@@ -1,0 +1,73 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --background: #f2f9fe;
+    --text-primary: #111729;
+    --text-secondary: #223344;
+}
+
+[data-theme='dark'] {
+    --background: #111729;
+    --text-primary: #fff;
+    --text-secondary: #f2f9fe;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--background);
+}
+
+.toggle-btn {
+    transition: background-color 0.1s ease, border-color 0.2s ease;
+}
+
+.toggle-btn .thumb {
+    transform: translateX(0);
+    transition: left 0.15s ease;
+    position: absolute;
+    left: 0.15rem;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.toggle-btn.toggled .thumb {
+    left: calc(60px - 25px);
+}
+
+/* @media (prefers-color-scheme: dark) {
+    body {
+        background-color: #111729;
+    }
+} */
+
+[data-theme='dark'] {
+    background-color: #111729;
+}
+
+[data-theme='white'] {
+    background-color: #F2F9FE;
+}
+
+h1 {
+    color: var(--text-primary);
+}
+
+h2 {
+    color: var(--text-secondary);
+}
+
+p {
+    color: var(--text-primary);
+}
+
+button {
+    color: var(--text-primary)
+}
